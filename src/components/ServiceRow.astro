@@ -1,0 +1,21 @@
+---
+interface Props {
+  index: string;
+  category: string;
+  title: string;
+  text: string;
+}
+
+const { index, category, title, text } = Astro.props;
+---
+
+<article class="service-row">
+  <div class="service-label">{index} {category}</div>
+
+  <div>
+    <h3>{title}</h3>
+    <p>{text}</p>
+  </div>
+
+  <span class="service-arrow" aria-hidden="true">↗</span>
+</article>

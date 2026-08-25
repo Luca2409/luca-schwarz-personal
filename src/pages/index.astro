@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import ServiceRow from '../components/ServiceRow.astro';
+import TechGrid from '../components/TechGrid.astro';
+import Footer from '../components/Footer.astro';
+
+import { getCollection } from 'astro:content';
+
+const services = (await getCollection('services')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<BaseLayout
+  title="Luca Schwarz – E-Commerce, Softwareentwicklung & Beratung"
+  description="Beratung, E-Commerce und Softwareentwicklung: von der Prozessanalyse über die Konzeption bis zur technischen Umsetzung."
+>
+  <Header />
+
+  <main>
+    <section class="hero">
+      <div class="container hero-layout">
+        <div>
+          <span class="badge">E-Commerce · Softwareentwicklung · Beratung</span>
+          <h1>Ich verbinde Business-Anforderungen mit sauberer Technik.</h1>
+        </div>
+
+        <div class="hero-copy">
+          <p>
+            Von der Prozessanalyse über die Konzeption bis zur Umsetzung –
+            für Shops, APIs und individuelle Webanwendungen.
+          </p>
+
+          <a class="button button-primary" href="#contact">
+            Projekt besprechen
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Leistungen</div>
+            <h2>Was ich für Unternehmen löse.</h2>
+          </div>
+
+          <p>
+            Kein starrer Technologie-Stack, sondern Lösungen passend zu
+            Anforderungen, Budget und bestehender Systemlandschaft.
+          </p>
+        </div>
+
+        <div class="service-list">
+          {services.map((service) => (
+            <ServiceRow
+              index={service.data.index}
+              category={service.data.category}
+              title={service.data.title}
+              text={service.data.description}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="principle-section">
+      <div class="container principle-layout">
+        <div class="eyebrow">Prinzip</div>
+
+        <div class="principle-content">
+          <h2>Nicht einfach Software. Die passende Lösung.</h2>
+          <p>
+            Technologie sollte sich am Geschäft orientieren — nicht andersherum.
+            Deshalb beginnt meine Arbeit nicht mit dem Framework, sondern mit
+            Prozessen, Anforderungen und dem eigentlichen Problem.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">Über mich</div>
+          <h2>Technik verstehen. Geschäft mitdenken.</h2>
+        </div>
+
+        <div class="copy">
+          <p>
+            Ich arbeite im Enterprise-E-Commerce und begleite Systeme über
+            ihren gesamten Lebenszyklus: Anforderungen, Konzeption,
+            Entwicklung, APIs, ERP-Integration, Operations, Support und
+            Optimierung.
+          </p>
+
+          <p>
+            Dadurch betrachte ich Software nicht isoliert als Code, sondern
+            als Teil eines Geschäftsprozesses.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight-top">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Stack</div>
+            <h2>Technologien</h2>
+          </div>
+
+          <p>
+            Werkzeuge, mit denen ich heute arbeite oder gezielt Lösungen
+            umsetze.
+          </p>
+        </div>
+
+        <TechGrid />
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-card">
+          <div class="eyebrow eyebrow-light">Kontakt</div>
+
+          <h2>Aus Problem wird Plan.</h2>
+
+          <p>
+            Sie müssen noch keine fertige technische Lösung haben.
+            Beschreiben Sie mir einfach, wo Sie stehen und was Sie erreichen
+            möchten.
+          </p>
+
+          <a class="button button-light" href="mailto:hello@example.de">
+            Projekt besprechen
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
