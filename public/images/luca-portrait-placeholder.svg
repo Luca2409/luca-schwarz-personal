@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1200" role="img" aria-labelledby="title description">
+  <title id="title">Platzhalter für das zukünftige Portrait von Luca Schwarz</title>
+  <desc id="description">Eine warme, abstrakte Fläche mit den Initialen LS.</desc>
+  <rect width="960" height="1200" fill="#a24e32"/>
+  <circle cx="790" cy="170" r="300" fill="#c47755" opacity="0.56"/>
+  <circle cx="130" cy="1060" r="360" fill="#6f2f20" opacity="0.42"/>
+  <path d="M-60 620C172 488 324 490 524 610s354 129 516 36v554H-60Z" fill="#dfb59f" opacity="0.24"/>
+  <text x="480" y="650" fill="#f5f2ea" font-family="Georgia, 'Times New Roman', serif" font-size="280" font-style="italic" text-anchor="middle" letter-spacing="-22">LS</text>
+</svg>

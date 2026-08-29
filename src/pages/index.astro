@@ -10,6 +10,7 @@ import { getCollection } from 'astro:content';
 const services = (await getCollection('services')).sort(
   (a, b) => a.data.order - b.data.order
 );
+const portraitPlaceholder = `${import.meta.env.BASE_URL}/images/portrait.jpg`;
 ---
 
 <BaseLayout
@@ -21,21 +22,37 @@ const services = (await getCollection('services')).sort(
   <main>
     <section class="hero">
       <div class="container hero-layout">
-        <div>
+        <div class="hero-content">
           <span class="badge">E-Commerce · Softwareentwicklung · Beratung</span>
+          <p class="hero-intro">Hallo, ich bin Luca.</p>
           <h1>Ich verbinde Business-Anforderungen mit sauberer Technik.</h1>
+
+          <div class="hero-copy">
+            <p>
+              Ich begleite Unternehmen von der Prozessanalyse über die
+              Konzeption bis zur Umsetzung – bei Shops, APIs und individuellen
+              Webanwendungen.
+            </p>
+
+            <a class="button button-primary" href="#contact">
+              Projekt besprechen
+            </a>
+          </div>
         </div>
 
-        <div class="hero-copy">
-          <p>
-            Von der Prozessanalyse über die Konzeption bis zur Umsetzung –
-            für Shops, APIs und individuelle Webanwendungen.
-          </p>
-
-          <a class="button button-primary" href="#contact">
-            Projekt besprechen
-          </a>
-        </div>
+        <figure class="portrait-card">
+          <!-- Replace this source with /images/luca-portrait.webp once the portrait is ready. -->
+          <img
+            src={portraitPlaceholder}
+            alt=""
+            width="960"
+            height="1200"
+          />
+          <figcaption>
+            <span>Luca Schwarz</span>
+            <span aria-hidden="true">↗</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 

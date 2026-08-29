@@ -1,7 +1,14 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
 <header class="site-header">
   <div class="container">
     <nav class="nav" aria-label="Hauptnavigation">
-      <a class="logo" href="/">Luca Schwarz</a>
+      <a class="logo" href={base} aria-label="Luca Schwarz – Startseite">
+        <span class="logo-mark" aria-hidden="true">LS</span>
+        <span>Luca Schwarz</span>
+      </a>
 
       <div class="nav-links">
         <a href="#services">Leistungen</a>
