@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://lucaschwarz.io',
-  integrations: [sitemap()],
+    site: 'https://lucaschwarz.io',
+    path: '/',
+    integrations: [sitemap()],
 });
