@@ -10,7 +10,7 @@ import { getCollection } from 'astro:content';
 const services = (await getCollection('services')).sort(
   (a, b) => a.data.order - b.data.order
 );
-const portraitPlaceholder = `${import.meta.env.BASE_URL}/images/portrait.jpg`;
+const portraitPlaceholder = `${import.meta.env.BASE_URL}images/portrait.jpg`;
 ---
 
 <BaseLayout
